@@ -1,0 +1,90 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/root.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "required": [
+        "name",
+        "profession",
+        "married",
+        "physical",
+        "tags"
+    ],
+    "properties": {
+        "married": {
+            "$id": "#/properties/married",
+            "type": "boolean",
+            "title": "Is he married?",
+            "default": false,
+            "examples": [
+                false
+            ]
+        },
+        "physical": {
+            "$id": "#/properties/physical",
+            "type": "object",
+            "title": "The physical characters",
+            "required": [
+                "weight",
+                "height"
+            ],
+            "properties": {
+                "weight": {
+                    "$id": "#/properties/dimensions/properties/weight",
+                    "type": "integer",
+                    "title": "The weight",
+                    "default": 0,
+                    "examples": [
+                        5
+                    ]
+                },
+                "height": {
+                    "$id": "#/properties/dimensions/properties/height",
+                    "type": "integer",
+                    "title": "The Height Schema",
+                    "default": 0,
+                    "examples": [
+                        10
+                    ]
+                }
+            }
+        },
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+                "A green door"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "profession": {
+            "$id": "#/properties/profession",
+            "type": "string",
+            "title": "The profession",
+            "default": "",
+            "examples": [
+                "Scietist", "Engineer", "Pilot"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "tags": {
+            "$id": "#/properties/tags",
+            "type": "array",
+            "title": "The Tags Schema",
+            "items": {
+                "$id": "#/properties/tags/items",
+                "type": "string",
+                "title": "The Items Schema",
+                "default": "",
+                "examples": [
+                    "home",
+                    "green"
+                ],
+                "pattern": "^(.*)$"
+            }
+        }
+    }
+}
