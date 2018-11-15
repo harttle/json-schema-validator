@@ -1,11 +1,11 @@
 define(function (require) {
     var axios = require('axios');
     var konsole = require('./konsole');
-    var generator = require('generate-schema');
+    var generator = require('jsg07');
     var json = require('./utils/json');
 
     function generate(data) {
-        var schema = JSON.stringify(generator.json(data), null, 4);
+        var schema = JSON.stringify(generator.infer(data), null, 4);
         schema = json.parse(schema) || {};
         schema.$schema = 'http://json-schema.org/draft-07/schema#';
         return schema;
